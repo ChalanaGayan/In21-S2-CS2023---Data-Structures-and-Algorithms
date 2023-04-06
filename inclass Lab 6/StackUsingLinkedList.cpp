@@ -1,5 +1,7 @@
 #include <iostream>
+#include <chrono>  
 using namespace std;
+using namespace std::chrono;
 
 class Node {
 public:
@@ -57,6 +59,8 @@ public:
 };
 
 int main() {
+    auto start = high_resolution_clock::now();  // start the timer
+
     StackUsingLinkedList s;
 
     s.push(8);
@@ -87,6 +91,11 @@ int main() {
 
     cout << "After pushing itrems ";
     s.display();
+
+    auto stop = high_resolution_clock::now();  // stop the timer
+    auto duration = duration_cast<microseconds>(stop - start);  // calculate the duration
+
+    cout << "Execution time: " << duration.count() << " microseconds." << endl;
 
     return 0;
 }
