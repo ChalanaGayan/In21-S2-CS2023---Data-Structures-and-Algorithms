@@ -1,4 +1,5 @@
 #include <iostream>
+#include <chrono> 
 
 using namespace std;
 
@@ -47,6 +48,8 @@ public:
 };
 
 int main() {
+    auto start = chrono::high_resolution_clock::now(); // start the timer
+
     StackUsingArray s(10);
 
     s.push(8);
@@ -75,8 +78,13 @@ int main() {
     s.push(3);
     s.push(1);
 
-    cout << "After pushing itrems ";
+    cout << "After pushing items: ";
     s.display();
+
+    auto end = chrono::high_resolution_clock::now(); // end the timer
+    auto duration = chrono::duration_cast<chrono::microseconds>(end - start); // calculate the duration
+
+    cout << "Execution time: " << duration.count() << " microseconds" << endl; // print the duration
 
     return 0;
 }
