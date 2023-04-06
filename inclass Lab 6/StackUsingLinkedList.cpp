@@ -70,12 +70,14 @@ int main() {
     s.push(20);
     s.push(17);
 
+    cout << "Start stack: ";
     s.display();
 
     for (int i = 0; i < 5; i++) {
         s.pop();
     }
 
+    cout << "After popping 5 times: ";
     s.display();
 
     s.push(4);
@@ -83,6 +85,7 @@ int main() {
     s.push(3);
     s.push(1);
 
+    cout << "After pushing itrems ";
     s.display();
 
     return 0;
