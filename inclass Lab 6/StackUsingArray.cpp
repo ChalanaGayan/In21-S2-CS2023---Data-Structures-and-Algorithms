@@ -63,11 +63,9 @@ int main() {
     cout << "Start stack: ";
     s.display();
 
-    s.pop();
-    s.pop();
-    s.pop();
-    s.pop();
-    s.pop();
+    for (int i = 0; i < 5; i++) {
+        s.pop();
+    }
 
     cout << "After popping 5 times: ";
     s.display();
