@@ -12,7 +12,7 @@ private:
     Node* top;
 
 public:
-    Stack() {
+    StackUsingLinkedList() {
         top = nullptr;
     }
 
@@ -25,7 +25,7 @@ public:
 
     int pop() {
         if (top == nullptr) {
-            cout << "Stack Underflow" << endl;;
+            cout << "Stack Underflow" << endl;
         }
 
         int value = top->data;
@@ -39,9 +39,51 @@ public:
     bool isEmpty() {
         return top == nullptr;
     }
+
+    void display() {
+        if (isEmpty()) {
+            cout << "Stack is empty." << endl;
+            return;
+        }
+
+        cout << "Stack: ";
+        Node* temp = top;
+        while (temp != nullptr) {
+            cout << temp->data << " ";
+            temp = temp->next;
+        }
+        cout << endl;
+    }
 };
 
 int main() {
-     
+    StackUsingLinkedList s;
+
+    s.push(8);
+    s.push(10);
+    s.push(5);
+    s.push(11);
+    s.push(15);
+    s.push(23);
+    s.push(6);
+    s.push(18);
+    s.push(20);
+    s.push(17);
+
+    s.display();
+
+    for (int i = 0; i < 5; i++) {
+        s.pop();
+    }
+
+    s.display();
+
+    s.push(4);
+    s.push(30);
+    s.push(3);
+    s.push(1);
+
+    s.display();
+
     return 0;
 }
