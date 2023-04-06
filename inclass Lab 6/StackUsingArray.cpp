@@ -60,7 +60,7 @@ int main() {
     s.push(20);
     s.push(17);
 
-    cout << "Initial stack: ";
+    cout << "Start stack: ";
     s.display();
 
     s.pop();
@@ -77,7 +77,7 @@ int main() {
     s.push(3);
     s.push(1);
 
-    cout << "After pushing 4, 30, 3, 1: ";
+    cout << "After pushing itrems ";
     s.display();
 
     return 0;
