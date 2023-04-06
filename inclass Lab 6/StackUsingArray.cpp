@@ -3,14 +3,13 @@
 using namespace std;
 
 class StackUsingArray {
-
 private:
     int* data;
     int top;
     int size;
 
 public:
-    Stack(int size) {
+    StackUsingArray(int size) {
         this->size = size;
         data = new int[size];
         top = -1;
@@ -26,19 +25,60 @@ public:
 
     int pop() {
         if (top == -1) {
-            cout << "Stack Under flow";
+            cout << "Stack Underflow";
         }
         int value = data[top];
         top--;
         return value;
     }
+
+    void display() {
+        if (top == -1) {
+            cout << "Stack is empty" << endl;
+        }
+        else {
+            cout << "Stack elements: ";
+            for (int i = 0; i <= top; i++) {
+                cout << data[i] << " ";
+            }
+            cout << endl;
+        }
+    }
 };
 
+int main() {
+    StackUsingArray s(10);
 
-int main()
-{
-    
+    s.push(8);
+    s.push(10);
+    s.push(5);
+    s.push(11);
+    s.push(15);
+    s.push(23);
+    s.push(6);
+    s.push(18);
+    s.push(20);
+    s.push(17);
+
+    cout << "Initial stack: ";
+    s.display();
+
+    s.pop();
+    s.pop();
+    s.pop();
+    s.pop();
+    s.pop();
+
+    cout << "After popping 5 times: ";
+    s.display();
+
+    s.push(4);
+    s.push(30);
+    s.push(3);
+    s.push(1);
+
+    cout << "After pushing 4, 30, 3, 1: ";
+    s.display();
+
+    return 0;
 }
-
-
-
